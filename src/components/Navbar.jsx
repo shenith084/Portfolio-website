@@ -26,8 +26,8 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
         <a href="#home" className="nav-logo brand-font">
-          <Code2 className="logo-icon" />
-          <span>Shenith<span className="gradient-text">Chanidu</span></span>
+          <img src="/logo.svg" alt="SC Logo" className="logo-img" />
+          <span>S<span className="gradient-text">C</span></span>
         </a>
 
         <div className={`nav-links ${isOpen ? 'active' : ''}`}>

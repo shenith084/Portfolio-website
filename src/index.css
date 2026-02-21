@@ -32,13 +32,17 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
-  background-image: 
+  background-image:
     radial-gradient(circle at 50% -20%, rgba(139, 92, 246, 0.15), transparent 50%),
     radial-gradient(circle at 0% 100%, rgba(6, 182, 212, 0.1), transparent 50%);
   background-attachment: fixed;
 }
 
-h1, h2, h3, h4, .brand-font {
+h1,
+h2,
+h3,
+h4,
+.brand-font {
   font-family: 'Outfit', sans-serif;
   font-weight: 700;
 }
@@ -139,7 +143,34 @@ ul {
   .container {
     padding: 0 1rem;
   }
+
   .section-title {
     font-size: 2rem;
   }
+}
+
+/* Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in forwards;
 }

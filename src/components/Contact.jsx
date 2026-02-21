@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Github, Linkedin, MessageSquare, Heart, Send, Loader2 } from 'lucide-react';
+import { Mail, Github, Linkedin, MessageSquare, Heart, Send, Loader2, Flame } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
@@ -9,7 +9,6 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        // Simulate API call
         setTimeout(() => {
             setIsSubmitting(false);
             setIsSubmitted(true);
@@ -20,6 +19,7 @@ const Contact = () => {
     return (
         <footer id="contact" className="contact-footer">
             <div className="container contact-container">
+                {/* Contact Form Section (Keeping this as it was requested and liked previously) */}
                 <div className="contact-grid">
                     <div className="contact-info-panel">
                         <h2 className="cta-title">Let's work <span className="gradient-text">together</span></h2>
@@ -36,13 +36,20 @@ const Contact = () => {
                                     <p>shenithchanidu@example.com</p>
                                 </div>
                             </a>
-                            <div className="contact-method-item glass-card">
-                                <MessageSquare className="method-icon" />
+                            <a href="https://github.com/shenith084" target="_blank" rel="noreferrer" className="contact-method-item glass-card">
+                                <Github className="method-icon" />
                                 <div>
-                                    <h4>Let's Chat</h4>
-                                    <p>Available for consulting</p>
+                                    <h4>GitHub</h4>
+                                    <p>github.com/shenith084</p>
                                 </div>
-                            </div>
+                            </a>
+                            <a href="https://www.linkedin.com/in/shenith-chanidu" target="_blank" rel="noreferrer" className="contact-method-item glass-card">
+                                <Linkedin className="method-icon" />
+                                <div>
+                                    <h4>LinkedIn</h4>
+                                    <p>linkedin.com/in/shenith-chanidu</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
 
@@ -78,28 +85,25 @@ const Contact = () => {
                     </div>
                 </div>
 
-                <div className="footer-bottom">
-                    <div className="footer-info">
-                        <h3 className="brand-font">Shenith<span className="gradient-text">Chanidu</span></h3>
-                        <p>BICT(Hons) Student & AI Enthusiast</p>
-                        <p className="location">Matara, Sri Lanka</p>
+                {/* Simplified Minimalist Footer */}
+                <div className="minimal-footer">
+                    <div className="footer-brand-simple">
+                        <Flame className="brand-icon-simple" fill="currentColor" />
+                        <h3 className="brand-name-simple">Shenith Chanidu</h3>
                     </div>
 
-                    <div className="footer-socials">
-                        <a href="https://github.com/shenith084" target="_blank" rel="noreferrer" className="footer-social-link">
-                            <Github size={24} />
+                    <div className="footer-social-circles">
+                        <a href="https://github.com/shenith084" target="_blank" rel="noreferrer" className="social-circle">
+                            <Github size={20} />
                         </a>
-                        <a href="https://www.linkedin.com/in/shenith-chanidu" target="_blank" rel="noreferrer" className="footer-social-link">
-                            <Linkedin size={24} />
+                        <a href="https://www.linkedin.com/in/shenith-chanidu" target="_blank" rel="noreferrer" className="social-circle">
+                            <Linkedin size={20} />
                         </a>
                     </div>
-                </div>
 
-                <div className="footer-copyright">
-                    <p>
-                        Developed with <Heart size={14} className="heart-icon" /> by <span className="gradient-text">Shenith Chanidu</span>
+                    <p className="copyright-simple">
+                        © {new Date().getFullYear()} Shenith Chanidu. All rights reserved.
                     </p>
-                    <p className="year">© {new Date().getFullYear()} All Rights Reserved</p>
                 </div>
             </div>
         </footer>

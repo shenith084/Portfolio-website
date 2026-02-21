@@ -5,20 +5,44 @@ import About from './components/About'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
+import BackToTop from './components/BackToTop'
+import { useEffect } from 'react'
+
 
 function App() {
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    const revealElements = document.querySelectorAll('.reveal');
+    revealElements.forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="app">
       <Navbar />
       <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
+        <div className="reveal"><Hero /></div>
+        <div className="reveal"><About /></div>
+        <div className="reveal"><Skills /></div>
+        <div className="reveal"><Projects /></div>
+        <div className="reveal"><Contact /></div>
       </main>
+      <BackToTop />
     </div>
   )
 }
+
 
 export default App
