@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, ArrowRight } from 'lucide-react';
+import { Github, Linkedin, ArrowRight, Download } from 'lucide-react';
 import './Hero.css';
 
 const Hero = () => {
@@ -44,6 +44,9 @@ const Hero = () => {
                 <div className="hero-actions">
                     <a href="#projects" className="btn-primary flex-btn">
                         View My Work <ArrowRight size={18} />
+                    </a>
+                    <a href="/cv-dummy.pdf" download className="btn-secondary flex-btn">
+                        Download CV <Download size={18} />
                     </a>
                     <div className="hero-socials">
                         <a href="https://github.com/shenith084" target="_blank" rel="noreferrer" className="social-icon glass-card">
