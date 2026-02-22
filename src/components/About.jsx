@@ -35,7 +35,7 @@ const About = () => {
                             <GraduationCap className="info-icon" />
                             <div>
                                 <h4>Education</h4>
-                                <p>BICT (Hons), Rajarata University</p>
+                                <p>BICT (Hons) - Final Year, Rajarata University</p>
                             </div>
                         </div>
 

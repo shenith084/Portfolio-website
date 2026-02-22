@@ -1,0 +1,177 @@
+.experience-section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-top: -2rem;
+    margin-bottom: 4rem;
+    font-size: 1.1rem;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--accent-cyan), var(--accent-purple), transparent);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 4rem;
+    width: 50%;
+    opacity: 1;
+    /* Keeping it visible, App.jsx handles reveal via intersection observer */
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item.left {
+    left: 0;
+    padding-right: 3rem;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+    padding-left: 3rem;
+    text-align: left;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    background: var(--bg-secondary);
+    border: 2px solid var(--accent-cyan);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-cyan);
+    z-index: 10;
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+}
+
+.timeline-item.left .timeline-dot {
+    right: -20px;
+}
+
+.timeline-item.right .timeline-dot {
+    left: -20px;
+}
+
+.timeline-content {
+    padding: 2rem;
+    transition: var(--transition);
+    position: relative;
+    border: 1px solid var(--glass-border);
+}
+
+.timeline-content:hover {
+    border-color: var(--accent-cyan);
+    transform: translateY(-5px);
+    box-shadow: var(--neon-cyan-glow);
+}
+
+.current-badge {
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    background: linear-gradient(90deg, #ff4d00, #ff9d00);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+.timeline-item.left .current-badge {
+    left: auto;
+    right: 24px;
+}
+
+.exp-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.exp-org {
+    font-size: 1.1rem;
+    color: var(--accent-cyan);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.exp-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.timeline-item.left .exp-meta {
+    justify-content: flex-end;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.exp-desc {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 30px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px !important;
+        padding-right: 0 !important;
+        text-align: left !important;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        left: 0;
+    }
+
+    .timeline-dot {
+        left: 10px !important;
+        right: auto !important;
+    }
+
+    .timeline-item.left .exp-meta {
+        justify-content: flex-start;
+    }
+
+    .timeline-item.left .current-badge {
+        right: auto;
+        left: 24px;
+    }
+}

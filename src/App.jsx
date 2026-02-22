@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
+import Experience from './components/Experience'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
@@ -35,6 +36,7 @@ function App() {
       <main>
         <div className="reveal"><Hero /></div>
         <div className="reveal"><About /></div>
+        <div className="reveal"><Experience /></div>
         <div className="reveal"><Skills /></div>
         <div className="reveal"><Projects /></div>
         <div className="reveal"><Contact /></div>

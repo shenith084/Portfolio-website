@@ -24,16 +24,16 @@ const Contact = () => {
                     <div className="contact-info-panel">
                         <h2 className="cta-title">Let's work <span className="gradient-text">together</span></h2>
                         <p className="cta-desc">
-                            I'm currently looking for new opportunities in AI Engineering, Data Science, and Software Development.
+                            I'm currently looking for internship and entry-level opportunities in AI Engineering, Data Science, and Software Development.
                             If you have a project in mind or just want to say hi, feel free to reach out!
                         </p>
 
                         <div className="contact-methods">
-                            <a href="mailto:shenithchanidu@example.com" className="contact-method-item glass-card">
+                            <a href="mailto:shenith222@gmail.com" className="contact-method-item glass-card">
                                 <Mail className="method-icon" />
                                 <div>
                                     <h4>Email Me</h4>
-                                    <p>shenithchanidu@example.com</p>
+                                    <p>shenith222@gmail.com</p>
                                 </div>
                             </a>
                             <a href="https://github.com/shenith084" target="_blank" rel="noreferrer" className="contact-method-item glass-card">
@@ -88,7 +88,10 @@ const Contact = () => {
                 {/* Simplified Minimalist Footer */}
                 <div className="minimal-footer">
                     <div className="footer-brand-simple">
-                        <Flame className="brand-icon-simple" fill="currentColor" />
+                        <div className="footer-logo">
+                            <img src="/logo.svg" alt="SC Logo" className="logo-img" />
+                            <span className="brand-font">S<span className="gradient-text">C</span></span>
+                        </div>
                         <h3 className="brand-name-simple">Shenith Chanidu</h3>
                     </div>
 

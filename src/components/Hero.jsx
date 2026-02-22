@@ -5,10 +5,10 @@ import './Hero.css';
 const Hero = () => {
     const [titleIndex, setTitleIndex] = useState(0);
     const titles = [
-        'Software Developer',
-        'AI/ML Engineer',
-        'Data Scientist',
-        'BICT Specialist'
+        'BICT Student',
+        'Aspiring AI/ML Engineer',
+        'Aspiring Software Developer',
+        'Data Science Enthusiast'
     ];
 
     useEffect(() => {
@@ -23,7 +23,7 @@ const Hero = () => {
             <div className="hero-content">
                 <div className="hero-badge glass-card">
                     <span className="badge-dot"></span>
-                    Available for new opportunities
+                    Available for internship & entry-level roles
                 </div>
 
                 <h1 className="hero-title">
@@ -38,7 +38,7 @@ const Hero = () => {
 
                 <p className="hero-description">
                     Passionate about building AI-driven solutions and high-performance web applications.
-                    Bridging the gap between complex data and intuitive user experiences.
+                    Final-year BICT Hons student bridging the gap between complex data and intuitive user experiences.
                 </p>
 
                 <div className="hero-actions">
@@ -66,9 +66,9 @@ const Hero = () => {
                         <div className="dot green"></div>
                     </div>
                     <div className="code-body">
-                        <p><span className="keyword">const</span> <span className="variable">developer</span> = &#123;</p>
+                        <p><span className="keyword">const</span> <span className="variable">student</span> = &#123;</p>
                         <p className="indent"><span className="property">name</span>: <span className="string">'Shenith Chanidu'</span>,</p>
-                        <p className="indent"><span className="property">role</span>: <span className="string">'AI/ML Enthusiast'</span>,</p>
+                        <p className="indent"><span className="property">status</span>: <span className="string">'Final Year UG'</span>,</p>
                         <p className="indent"><span className="property">location</span>: <span className="string">'Sri Lanka'</span>,</p>
                         <p className="indent"><span className="property">passion</span>: <span className="string">'Artificial Intelligence'</span></p>
                         <p>&#125;;</p>
