@@ -11,17 +11,17 @@ const skillCategories = [
     {
         title: 'Web Development',
         icon: <Globe className="skill-icon web" />,
-        skills: ['React.js', 'JavaScript', 'HTML5', 'CSS3', 'Bootstrap', 'PHP', 'Node.js']
+        skills: ['React.js', 'JavaScript', 'HTML5', 'CSS3', 'Bootstrap', 'Node.js']
     },
     {
         title: 'Databases & Backend',
         icon: <Database className="skill-icon db" />,
-        skills: ['MySQL', 'Firebase', 'REST APIs', 'Git', 'GitHub']
+        skills: ['MySQL', 'Firebase', 'REST APIs', 'Python', 'PHP']
     },
     {
         title: 'Tools & Design',
         icon: <PenTool className="skill-icon tools" />,
-        skills: ['Figma', 'VS Code', 'Vite', 'Linux', 'Agile/Scrum']
+        skills: ['Docker', 'VS Code', 'Git', 'GitHub', 'Linux']
     }
 ];
 

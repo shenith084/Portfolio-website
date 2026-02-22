@@ -3,20 +3,44 @@ import { Github, Linkedin, ArrowRight, Download } from 'lucide-react';
 import './Hero.css';
 
 const Hero = () => {
-    const [titleIndex, setTitleIndex] = useState(0);
     const titles = [
         'BICT Student',
         'Aspiring AI/ML Engineer',
         'Aspiring Software Developer',
         'Data Science Enthusiast'
     ];
+    const [loopNum, setLoopNum] = useState(0);
+    const [isDeleting, setIsDeleting] = useState(false);
+    const [text, setText] = useState('');
+    const [delta, setDelta] = useState(100);
+    const period = 2000;
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setTitleIndex((prev) => (prev + 1) % titles.length);
-        }, 3000);
-        return () => clearInterval(interval);
-    }, []);
+        let ticker = setInterval(() => {
+            tick();
+        }, delta);
+
+        return () => { clearInterval(ticker) };
+    }, [text, delta]);
+
+    const tick = () => {
+        let i = loopNum % titles.length;
+        let fullText = titles[i];
+        let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
+
+        setText(updatedText);
+
+        if (!isDeleting && updatedText === fullText) {
+            setIsDeleting(true);
+            setDelta(period);
+        } else if (isDeleting && updatedText === '') {
+            setIsDeleting(false);
+            setLoopNum(loopNum + 1);
+            setDelta(100);
+        } else if (isDeleting) {
+            setDelta(50);
+        }
+    };
 
     return (
         <section id="home" className="hero container">
@@ -33,7 +57,7 @@ const Hero = () => {
 
                 <div className="hero-typing">
                     <span className="typing-static">I am a </span>
-                    <span className="typing-dynamic">{titles[titleIndex]}</span>
+                    <span className="typing-dynamic">{text}</span>
                 </div>
 
                 <p className="hero-description">

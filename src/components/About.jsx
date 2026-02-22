@@ -10,9 +10,7 @@ const About = () => {
             <div className="about-content">
                 <div className="about-image-container">
                     <div className="image-border"></div>
-                    <div className="image-placeholder glass-card">
-                        <span className="brand-font">SC</span>
-                    </div>
+                    <img src="/profile.jpg" alt="Shenith Chanidu" className="about-img" />
                 </div>
 
                 <div className="about-text">

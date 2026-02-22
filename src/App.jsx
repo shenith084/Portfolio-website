@@ -5,6 +5,7 @@ import About from './components/About'
 import Experience from './components/Experience'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
+import Certifications from './components/Certifications'
 import Contact from './components/Contact'
 import BackToTop from './components/BackToTop'
 import { useEffect } from 'react'
@@ -39,6 +40,7 @@ function App() {
         <div className="reveal"><Experience /></div>
         <div className="reveal"><Skills /></div>
         <div className="reveal"><Projects /></div>
+        <div className="reveal"><Certifications /></div>
         <div className="reveal"><Contact /></div>
       </main>
       <BackToTop />

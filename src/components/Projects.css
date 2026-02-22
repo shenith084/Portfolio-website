@@ -23,6 +23,15 @@
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
+.clickable-card {
+    cursor: pointer;
+}
+
+.clickable-card:hover {
+    box-shadow: var(--neon-cyan-glow);
+}
+
+
 .project-header {
     display: flex;
     gap: 1.5rem;
