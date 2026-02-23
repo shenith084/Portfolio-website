@@ -3,7 +3,7 @@ name: Deploy Portfolio to AWS
 on:
   push:
     branches:
-      - main   # Triggers on every push to main branch
+      - main # Triggers on every push to main branch
 
 jobs:
   deploy:
@@ -19,8 +19,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
 
       # Step 3: Install dependencies
       - name: Install Dependencies
@@ -48,10 +48,10 @@ jobs:
           aws s3 cp dist/index.html s3://${{ secrets.S3_BUCKET_NAME }}/index.html \
             --cache-control "no-cache, no-store, must-revalidate"
 
-      # Step 7: Invalidate CloudFront cache (Optional - only if you set up CloudFront)
-      - name: Invalidate CloudFront Cache
-        if: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID != '' }}
-        run: |
-          aws cloudfront create-invalidation \
-            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
-            --paths "/*"
+      # Step 7: Invalidate CloudFront cache
+      # Uncomment this section AFTER you set up CloudFront and add CLOUDFRONT_DISTRIBUTION_ID secret
+      # - name: Invalidate CloudFront Cache
+      #   run: |
+      #     aws cloudfront create-invalidation \
+      #       --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+      #       --paths "/*"
