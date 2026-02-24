@@ -72,6 +72,11 @@
     color: #f59e0b;
 }
 
+.proj-icon.shop {
+    color: #ec4899;
+    /* Pink/Rose color */
+}
+
 .project-title-area h3 {
     font-size: 1.25rem;
     line-height: 1.4;

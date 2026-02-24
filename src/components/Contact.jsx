@@ -1,25 +1,58 @@
-import React, { useState } from 'react';
-import { Mail, Github, Linkedin, MessageSquare, Heart, Send, Loader2, Flame } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { Mail, Github, Linkedin, Send, Loader2, CheckCircle } from 'lucide-react';
+import emailjs from 'emailjs-com';
 import './Contact.css';
 
 const Contact = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const form = useRef();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        setTimeout(() => {
-            setIsSubmitting(false);
-            setIsSubmitted(true);
-            setTimeout(() => setIsSubmitted(false), 5000);
-        }, 1500);
+
+        // Using environment variables for better security and easier configuration
+        const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+        // Create a formatted timestamp
+        const now = new Date();
+        const timeString = now.toLocaleString('en-US', {
+            weekday: 'short',
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+
+        const templateParams = {
+            name: form.current.name.value,
+            email: form.current.email.value,
+            message: form.current.message.value,
+            time: timeString
+        };
+
+        emailjs.send(serviceID, templateID, templateParams, publicKey)
+            .then((result) => {
+                console.log(result.text);
+                setIsSubmitting(false);
+                setIsSubmitted(true);
+                setTimeout(() => setIsSubmitted(false), 5000);
+                form.current.reset(); // Reset the form
+            }, (error) => {
+                console.log(error.text);
+                setIsSubmitting(false);
+                alert("Failed to send message. Please check the console for details.");
+            });
     };
 
     return (
         <footer id="contact" className="contact-footer">
             <div className="container contact-container">
-                {/* Contact Form Section (Keeping this as it was requested and liked previously) */}
+                {/* Contact Form Section */}
                 <div className="contact-grid">
                     <div className="contact-info-panel">
                         <h2 className="cta-title">Let's work <span className="gradient-text">together</span></h2>
@@ -54,29 +87,29 @@ const Contact = () => {
                     </div>
 
                     <div className="contact-form-panel glass-card">
-                        <form onSubmit={handleSubmit}>
+                        <form ref={form} onSubmit={handleSubmit}>
                             <div className="form-group">
-                                <label>Full Name</label>
-                                <input type="text" placeholder="John Doe" required />
+                                <label htmlFor="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your Name" required />
                             </div>
                             <div className="form-group">
-                                <label>Email Address</label>
-                                <input type="email" placeholder="john@example.com" required />
+                                <label htmlFor="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="your@gmail.com" required />
                             </div>
                             <div className="form-group">
-                                <label>Message</label>
-                                <textarea rows="4" placeholder="How can I help you?" required></textarea>
+                                <label htmlFor="message">Message</label>
+                                <textarea id="message" name="message" rows="4" placeholder="type message" required></textarea>
                             </div>
 
                             <button
                                 type="submit"
-                                className="btn-primary submit-btn"
+                                className={`btn-primary submit-btn ${isSubmitted ? 'success' : ''}`}
                                 disabled={isSubmitting || isSubmitted}
                             >
                                 {isSubmitting ? (
                                     <><Loader2 className="animate-spin" size={20} /> Sending...</>
                                 ) : isSubmitted ? (
-                                    "Message Sent!"
+                                    <><CheckCircle size={20} /> Message Sent!</>
                                 ) : (
                                     <><Send size={20} /> Send Message</>
                                 )}

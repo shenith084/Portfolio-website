@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Github, Monitor, Cpu, Server, Coffee } from 'lucide-react';
+import { ExternalLink, Github, Monitor, Cpu, Server, Coffee, ShoppingBag } from 'lucide-react';
 import './Projects.css';
 
 const projects = [
@@ -34,6 +34,14 @@ const projects = [
         tech: ['PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS'],
         icon: <Coffee className="proj-icon cafe" />,
         link: 'https://github.com/shenith084/cafe-management-System.git'
+    },
+    {
+        title: 'E-Commerce Website',
+        date: 'Recent',
+        description: 'A full-featured E-Commerce platform built with Laravel 11, designed with a modern UI, secure payment integration, and complete admin management. Features product browsing, cart, and PayHere integration.',
+        tech: ['Laravel 11', 'PHP', 'MySQL', 'Blade', 'Tailwind CSS', 'PayHere'],
+        icon: <ShoppingBag className="proj-icon shop" />,
+        link: 'https://github.com/shenith084/E-Commerce-Website.git'
     }
 ];
 
