@@ -94,22 +94,126 @@
     gap: 1rem;
 }
 
+/* Reuse same keyframes as footer — defined here if Hero.css is standalone */
+@keyframes heroFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+@keyframes heroGlowCyan {
+    0% {
+        box-shadow: 0 0 8px 2px rgba(6, 182, 212, 0.55), 0 0 0 0 rgba(6, 182, 212, 0.35);
+    }
+
+    50% {
+        box-shadow: 0 0 18px 5px rgba(6, 182, 212, 0.25), 0 0 0 8px rgba(6, 182, 212, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 8px 2px rgba(6, 182, 212, 0.55), 0 0 0 0 rgba(6, 182, 212, 0.35);
+    }
+}
+
+@keyframes heroGlowBlue {
+    0% {
+        box-shadow: 0 0 8px 2px rgba(10, 102, 194, 0.6), 0 0 0 0 rgba(10, 102, 194, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 18px 5px rgba(10, 102, 194, 0.25), 0 0 0 8px rgba(10, 102, 194, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 8px 2px rgba(10, 102, 194, 0.6), 0 0 0 0 rgba(10, 102, 194, 0.4);
+    }
+}
+
+@keyframes heroIconPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+@keyframes heroRipple {
+    to {
+        transform: scale(2.8);
+        opacity: 0;
+    }
+}
+
 .social-icon {
-    width: 45px;
-    height: 45px;
+    position: relative;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    color: var(--text-secondary);
-    transition: var(--transition);
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.social-icon:hover {
+.social-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+    transform: scale(0);
+    opacity: 1;
+}
+
+.social-icon:active::after {
+    animation: heroRipple 0.5s ease-out forwards;
+}
+
+/* ── GitHub — always cyan ── */
+.social-icon.github {
+    border: 1.5px solid rgba(6, 182, 212, 0.6);
     color: var(--accent-cyan);
-    border-color: var(--accent-cyan);
-    transform: translateY(-5px);
-    box-shadow: var(--neon-cyan-glow);
+    background: rgba(6, 182, 212, 0.07);
+    animation: heroFloat 4s ease-in-out infinite,
+        heroGlowCyan 2.4s ease-in-out infinite;
+}
+
+.social-icon.github svg {
+    animation: heroIconPulse 2.4s ease-in-out infinite;
+}
+
+.social-icon.github:hover {
+    transform: translateY(-7px) scale(1.13);
+}
+
+/* ── LinkedIn — always brand blue ── */
+.social-icon.linkedin {
+    border: 1.5px solid rgba(10, 102, 194, 0.65);
+    color: #4d9de0;
+    background: rgba(10, 102, 194, 0.09);
+    animation: heroFloat 4s ease-in-out infinite 0.7s,
+        heroGlowBlue 2.4s ease-in-out infinite 0.7s;
+}
+
+.social-icon.linkedin svg {
+    animation: heroIconPulse 2.4s ease-in-out infinite 0.7s;
+}
+
+.social-icon.linkedin:hover {
+    transform: translateY(-7px) scale(1.13);
 }
 
 .hero-visual {

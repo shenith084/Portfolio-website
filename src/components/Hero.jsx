@@ -73,10 +73,10 @@ const Hero = () => {
                         Download CV <Download size={18} />
                     </a>
                     <div className="hero-socials">
-                        <a href="https://github.com/shenith084" target="_blank" rel="noreferrer" className="social-icon glass-card">
+                        <a href="https://github.com/shenith084" target="_blank" rel="noreferrer" className="social-icon glass-card github">
                             <Github size={20} />
                         </a>
-                        <a href="https://www.linkedin.com/in/shenith-chanidu" target="_blank" rel="noreferrer" className="social-icon glass-card">
+                        <a href="https://www.linkedin.com/in/shenith-chanidu" target="_blank" rel="noreferrer" className="social-icon glass-card linkedin">
                             <Linkedin size={20} />
                         </a>
                     </div>

@@ -129,10 +129,10 @@ const Contact = () => {
                     </div>
 
                     <div className="footer-social-circles">
-                        <a href="https://github.com/shenith084" target="_blank" rel="noreferrer" className="social-circle">
+                        <a href="https://github.com/shenith084" target="_blank" rel="noreferrer" className="social-circle github">
                             <Github size={20} />
                         </a>
-                        <a href="https://www.linkedin.com/in/shenith-chanidu" target="_blank" rel="noreferrer" className="social-circle">
+                        <a href="https://www.linkedin.com/in/shenith-chanidu" target="_blank" rel="noreferrer" className="social-circle linkedin">
                             <Linkedin size={20} />
                         </a>
                     </div>
