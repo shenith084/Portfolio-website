@@ -4,6 +4,12 @@ import './Certifications.css';
 
 const certifications = [
     {
+        title: "Career Essentials in Data Analysis",
+        issuer: "LinkedIn",
+        date: "Mar 2026",
+        icon: <Award size={20} />
+    },
+    {
         title: "Deep Learning and Generative AI: Data Prep, Analysis, and Visualization with Python",
         issuer: "LinkedIn",
         date: "Feb 2026",

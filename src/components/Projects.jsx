@@ -1,8 +1,16 @@
 import React from 'react';
-import { ExternalLink, Github, Monitor, Cpu, Server, Coffee, ShoppingBag } from 'lucide-react';
+import { ExternalLink, Github, Monitor, Cpu, Server, Coffee, ShoppingBag, Activity } from 'lucide-react';
 import './Projects.css';
 
 const projects = [
+    {
+        title: 'Brain Tumor Detection System using CNN & Transfer Learning',
+        date: 'Jan 2026',
+        description: 'Developed a high-accuracy binary classification model using MobileNetV2 and TensorFlow/Keras, optimizing performance through image preprocessing, data augmentation, and early stopping.',
+        tech: ['Python', 'TensorFlow', 'Keras', 'MobileNetV2', 'React.js', 'Flask', 'OpenCV', 'CNN'],
+        icon: <Activity className="proj-icon medical" />,
+        link: 'https://github.com/shenith084/Cancer_detection_CNN'
+    },
     {
         title: 'AI-Based Mango Disease Detection with Smart Chatbot',
         date: 'Jan 2025 – Sep 2025',
