@@ -69,7 +69,7 @@ const Hero = () => {
                     <a href="#projects" className="btn-primary flex-btn">
                         View My Work <ArrowRight size={18} />
                     </a>
-                    <a href="/shenith chanidu.pdf" download className="btn-secondary flex-btn">
+                    <a href="/Shenith_Chanidu.pdf" download className="btn-secondary flex-btn">
                         Download CV <Download size={18} />
                     </a>
                     <div className="hero-socials">
